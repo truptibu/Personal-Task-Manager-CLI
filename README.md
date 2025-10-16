@@ -1,4 +1,5 @@
 Personal Task Manager (CLI) 📋
+
 A robust, Java-based command-line interface (CLI) application for managing personal tasks. Designed with clean architecture, demonstrating strong OOP principles, and fully covered by automated tests.
 
 💡 Key Highlights
