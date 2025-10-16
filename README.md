@@ -1,137 +1,116 @@
-Personal Task Manager (CLI)
-====================================
+Personal Task Manager (CLI) 📋
+A robust, Java-based command-line interface (CLI) application for managing personal tasks. Designed with clean architecture, demonstrating strong OOP principles, and fully covered by automated tests.
 
-A full-featured backend + CLI for personal task management.
-This project demonstrates clean Java, OOP, validation, exception handling, Maven, and a comprehensive TestNG suite.
+💡 Key Highlights
 
--------------------------------------------------------------------------------
+* 100% Java-based implementation — zero reliance on external databases or complex UI.
 
-Project Structure
------------------
-personal-task-manager/
-├── pom.xml
-├── README.txt
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │        └── com/taskmanager/
-│   │            ├── App.java               
-│   │            ├── model/
-│   │            │    ├── Category.java
-│   │            │    ├── Task.java
-│   │            │    ├── Priority.java
-│   │            │    └── Status.java
-│   │            ├── service/
-│   │            ├── repository/
-│   │            ├── exception/
-│   │            └── util/
-│   └── test/
-│        └── java/
-│             └── com/taskmanager/
-│                  ├── service/
-│                  ├── repository/
-│                  └── util/
+* Clean Modular Architecture — high maintainability and scalability through strict separation of concerns (Service, Repository, Model).
 
--------------------------------------------------------------------------------
+* Robustness — features extensive input validation and custom exception handling.
 
-Building and Running
---------------------
+* Quality Assured — fully automated TestNG test suite covering core logic (service, repository, utilities).
 
-**Requirements:**
-- Java 8+ (any recent JDK is fine)
-- Maven 3.6+ (add 'mvn' to your PATH)
+* Lightweight CLI design, perfect for learning and demonstrating intermediate Java skills.
 
-**To Build:**
-1. Open a terminal in the project root.
-2. Run:
-   mvn clean install
+🚀 Features
 
-**To Run the CLI:**
-- In Eclipse/IntelliJ: Right-click App.java → Run As → Java Application
-- Or in terminal:
-  mvn exec:java
+* The CLI provides comprehensive functionality for efficient task management:
 
--------------------------------------------------------------------------------
+* Task Creation: Add new tasks with detailed metadata:
 
-Using the CLI
--------------
+* Category
 
-When you run App.java, you'll get an interactive prompt:
+* Priority
 
-Commands available:
+* Status
 
-- add             : Add a new task (will prompt for all info)
-- list            : List all tasks
-- listbycategory  : List tasks for a specific category ID
-- listbystatus    : List tasks by status (PENDING, IN_PROGRESS, COMPLETED)
-- delete          : Delete a task by ID
-- help            : Show list of commands
-- exit            : Quit application
+* Date
 
--------------------------------------------------------------------------------
+ ** Flexible Listing :-
 
-Testing
--------
+* List all tasks.
 
-This project includes a fully automated TestNG test suite (see /src/test/java).
+* Filter tasks by Category ID.
 
-**To test everything:**
+* Filter tasks by Status (PENDING, IN_PROGRESS, COMPLETED).
 
-In terminal:
+** Task Management:-
+
+* Delete tasks by their unique ID.
+
+* User Experience: Interactive command-line prompt for smooth, text-based interaction.
+
+⚙️ Technologies Used
+Technology / Tool	Purpose / Description
+
+🟠 Java (JDK 8+)	Core programming language.
+
+🔵 Maven	Build automation, dependency management, and project execution.
+
+🧪 TestNG	Testing framework for unit and integration testing.
+
+🧩 Collections Framework	Java structures (List, Map) for efficient in-memory task storage.
+
+💡 Clean Architecture	Layered structure for modularity and testability.
+
+🧾 Exception Handling	Custom exceptions for robust error and validation handling.
+
+📁 Project Structure
+
+The project employs a modular and layered architecture to achieve a clear separation of concerns:
+
+Folder / File	 Description
+pom.xml	       Maven build file defining dependencies, plugins, and configurations.
+
+App.java     	 The main entry point for the CLI. Handles user input and service invocation.
+
+model/	       Contains core data classes (Task) and enumerations (Category, Priority, Status).
+
+repository/   	 Data Access Layer. TaskRepository handles CRUD operations using an in-memory structure.
+
+service/	       Business Logic Layer. Implements all core feature logic (e.g., Task operations, reporting).
+
+util/         	 Utility Helpers. Contains classes like DateValidator for input validation.
+
+exception/	    Custom exceptions for specific runtime errors (e.g., TaskNotFoundException).
+
+test/	          Automated TestNG test cases for all key components.
+
+▶️ Usage & Installation
+Prerequisites
+Java (JDK 8+)
+
+Maven
+
+Build and Run
+Execute these commands from the root directory of the project:
+
+Bash
+
+# 1. Build project (clean, compile, package)
+mvn clean install
+
+# 2. Run the application's main class
+mvn exec:java
+
+# 3. Run the automated test suite
 mvn test
 
-Or in Eclipse/IDEA:
-- Right-click a test class or package → Run As → TestNG Test
+CLI Commands
+When running the application, you will be presented with an interactive prompt. The following commands are available:
 
-All service logic, validation, exceptions, and edge cases are covered in tests:
-- TaskServiceTest
-- CategoryServiceTest
-- ReportServiceTest
-- TaskRepositoryTest
-- DateValidatorTest
+add: Add a new task (prompts interactively for all metadata).
 
--------------------------------------------------------------------------------
+list: List all tasks.
 
-Design and Implementation Details
----------------------------------
+listbycategory: List tasks filtered by a specific category ID.
 
-- **Models:** Task, Category, Priority, Status enums.
-- **Services:** Business logic, validation, filtering, reporting, category management.
-- **Repositories:** In-memory data storage with thread-safe operations.
-- **Custom Exceptions:** Robust error handling for all failures and business rule violations.
-- **Util:** Date validation and business rule validation utilities.
-- **Test Suite:** High coverage for both positive and negative logic; exception, validation, and data-driven tests.
+listbystatus: List tasks by status (PENDING, IN_PROGRESS, COMPLETED).
 
--------------------------------------------------------------------------------
+delete: Delete a task by its ID.
 
-Extending The Project
----------------------
+help: Show the list of available commands.
 
-You can easily add:
-- Task updating (edit fields)
-- Marking tasks complete
-- Sorting or advanced filters
-- Richer category/priority management
-- File/database persistence
-- Advanced reporting/notification features
-
--------------------------------------------------------------------------------
-
-Assignment/Presentation Tips
-----------------------------
-
-- Demonstrate CLI for task creation, listing, and deletion.
-- Show test suite green (all-pass) in IDE or terminal for verification.
-- Be ready to discuss: validation, exception classes, test design, and edge case coverage.
-- Point reviewers to this README for setup, build, and run info.
-
--------------------------------------------------------------------------------
-
-Questions or Troubleshooting
----------------------------
-- If "mvn" not found: add Maven bin folder to your system PATH.
-- If Java errors: reinstall JDK and set JAVA_HOME/PATH.
-- For package/import errors: verify folder/package structure matches this README.
-
--------------------------------------------------------------------------------
+exit: Quit the application.
 
